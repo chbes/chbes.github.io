@@ -1,0 +1,9 @@
+<form>
+    <h3>TIME</h3>
+    <input type="number" max="999" min="0" (change)="updateMinute($event)" value="0">
+    <input type="number" max="59" min="0" (change)="updateSecond($event)" value="0">
+</form>
+
+<h3>DISTANCE: {{broncoDistance}}m ({{broncoRoundDistance}}mx{{broncoNbRound}})</h3>
+<h3>AVERAGE TIME: {{averageRoundDuration * 1000 | date:'mm:ss'}}min | {{averageRoundDuration}}s</h3>
+<h3>SPEED: {{speed | pspeed:'kmh' | number:'1.0-2'}}km/h | {{speed | pspeed:'ms' | number:'1.0-2'}}m/s | {{speed | pspeed:'mmin' | number:'1.0-0'}}m/min</h3>
